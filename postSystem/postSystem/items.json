@@ -1,0 +1,60 @@
+{
+  "info":"Sample Packages",
+  "packages": [
+    {
+      "description": "Snow globe",
+      "dimensions": [
+        100,
+        100,
+        120
+      ],
+      "weight": 870
+    },
+    {
+      "description": "MTG card",
+      "dimensions": [
+        89,
+        64,
+        1
+      ],
+      "weight": 2
+    }
+  ,{
+      "description": "Surf magazine",
+      "dimensions": [
+        210,
+        297,
+        5
+      ],
+      "weight": 120
+    }
+  ,
+    {
+      "description": "Algorithms Textbook",
+      "dimensions": [
+        210,
+        297,
+        50
+      ],
+      "weight": 650
+    },
+    {
+      "description": "Folded fishing rod",
+      "dimensions": [
+        1100,
+        100,
+        100
+      ],
+      "weight": 1500
+    },
+    {
+      "description": "Playsation 5",
+      "dimensions": [
+        390,
+        260,
+        104
+      ],
+      "weight": 4500
+    }
+  ]
+}
