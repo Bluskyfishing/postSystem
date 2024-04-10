@@ -9,11 +9,11 @@ namespace postSystem
 {
     public static class Packing
     {
-        public static int[] PackingFinder(int[] dimentions) 
+        public static int[] PackingFinder(int[] dimensions) 
         {
-            int length = dimentions[0];
-            int width = dimentions[1];
-            int height = dimentions[2];
+            int length = dimensions[0];
+            int width = dimensions[1];
+            int height = dimensions[2];
 
             if (height < 20)
             {
