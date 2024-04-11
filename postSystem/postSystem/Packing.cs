@@ -33,7 +33,7 @@ namespace postSystem
                         return package;
                     }
                 }
-                return [1,0,0];
+                return [length, width, height];
             }
 
             else if (height > 20) 
@@ -53,7 +53,7 @@ namespace postSystem
                         return package;
                     }
                 }
-                return [2,0,0];
+                return [length, width, height];
             }
             return [0,0,0];
         }

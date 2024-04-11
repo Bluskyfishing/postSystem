@@ -118,7 +118,7 @@ namespace postSystem
 
                 }
                 //Brev fra 350g til 2kg 
-                else if (length + width + height <= 900 && length < 600 && width < 600 && height < 600 && itemWeight >= 350 || itemWeight <= 2000)
+                else if (length + width + height <= 900 && length < 600 && width < 600 && height < 600 && (itemWeight >= 350 || itemWeight <= 2000))
                 {
                     string postageTypeName = "Letter from 350g to 2kg ";
                     totalItemsArray[4] = postageTypeName;
