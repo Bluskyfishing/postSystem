@@ -32,7 +32,7 @@ namespace postSystem
                         return package;
                     }
                 }
-                return [1, 0, 0];
+                return [1,0,0];
             }
 
             else if (height > 20) 
