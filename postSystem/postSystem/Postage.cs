@@ -15,8 +15,11 @@ namespace postSystem
         public static string[] Postagefinder(string itemDescription, int[] packingType, int[] packageDimensions, int itemWeight)
         {
             string[] totalItemsArray = new string[6];
+
             totalItemsArray[0] = itemDescription;
             totalItemsArray[1] = itemWeight.ToString();
+            totalItemsArray[2] = $"{packingType[0]} x {packingType[1]}";
+            totalItemsArray[3] = packingType[2].ToString();
 
             int length = packingType[0]; //Length of box/letter
             int width = packingType[1]; //Width of of box/letter
@@ -31,10 +34,10 @@ namespace postSystem
                 if (length <= 350 && width <= 250 && height <= 12 && weight >= 350 || weight <= 5000)
                 {
                     string postageTypeName = "Norgespakke small (up to 5 kg)";
-                    totalItemsArray[2] = postageTypeName;
+                    totalItemsArray[4] = postageTypeName;
 
                     int price = 73;
-                    totalItemsArray[3] = price.ToString();
+                    totalItemsArray[5] = price.ToString();
 
                     return totalItemsArray;
 
@@ -43,7 +46,7 @@ namespace postSystem
                 else if (length > 350 && width > 250 && height > 12 && weight > 2000 && length <= 1200 && width > 600 && height > 600)
                 {
                     string postageTypeName = "Norgespakke big (over 2kg)";
-                    totalItemsArray[2] = postageTypeName;
+                    totalItemsArray[4] = postageTypeName;
 
                     int[] option1 = [10000, 177]; //Will be handed in at posten so doesnt need price for posten.no?
                     int[] option2 = [25000, 293];
@@ -55,17 +58,17 @@ namespace postSystem
                     {
                         if (weight <= 10000)
                         {
-                            totalItemsArray[3] = option[1].ToString();
+                            totalItemsArray[5] = option[1].ToString();
                             return totalItemsArray;
                         }
                         else if (weight <= 25000)
                         {
-                            totalItemsArray[3] = option[1].ToString();
+                            totalItemsArray[5] = option[1].ToString();
                             return totalItemsArray;
                         }
                         else if (weight <= 35000)
                         {
-                            totalItemsArray[3] = option[1].ToString();
+                            totalItemsArray[5] = option[1].ToString();
                             return totalItemsArray;
                         }
                     }
@@ -73,8 +76,8 @@ namespace postSystem
                 }
                 else
                 {
-                    totalItemsArray[2] = "Too big to ship!";
-                    totalItemsArray[3] = "NO PRICE";
+                    totalItemsArray[4] = "Too big to ship!";
+                    totalItemsArray[5] = "NO PRICE";
                     return totalItemsArray;
                 }
             }
@@ -86,7 +89,7 @@ namespace postSystem
                 if (length <= 350 && width <= 250 && height <= 70 && itemWeight < 350) 
                 {
                     string postageTypeName = "Letter under 350g";
-                    totalItemsArray[2] = postageTypeName;
+                    totalItemsArray[4] = postageTypeName;
 
                     // array = [weight, 2cm height price, 2-7cm height price]
                     int[] option1 = [20, 23, 57];
@@ -102,12 +105,12 @@ namespace postSystem
                         {
                             if (height <= 20) //Inntil 2 cm tykk 	
                             {
-                                totalItemsArray[3] = option[1].ToString();
+                                totalItemsArray[5] = option[1].ToString();
                                 return totalItemsArray;
                             }
                             else //2–7 cm tykk
                             {
-                                totalItemsArray[3] = option[1].ToString();
+                                totalItemsArray[5] = option[1].ToString();
                                 return totalItemsArray;
                             }
                         }
@@ -118,7 +121,7 @@ namespace postSystem
                 else if (length + width + height <= 900 && length < 600 && width < 600 && height < 600 && itemWeight >= 350 || itemWeight <= 2000)
                 {
                     string postageTypeName = "Letter from 350g to 2kg ";
-                    totalItemsArray[2] = postageTypeName;
+                    totalItemsArray[4] = postageTypeName;
 
                     // array = [weight, 2cm height price, 2-7cm height price, More than 7cm height price]
                     int[] option1 = [20, 23, 57, 90];
@@ -136,17 +139,17 @@ namespace postSystem
                         {
                             if (height >= 20)
                             {
-                                totalItemsArray[3] = option[1].ToString();
+                                totalItemsArray[5] = option[1].ToString();
                                 return totalItemsArray;
                             }
                             else if (height <= 20)
                             {
-                                totalItemsArray[3] = option[1].ToString();
+                                totalItemsArray[5] = option[1].ToString();
                                 return totalItemsArray;
                             }
                             else if (height > 70)
                             {
-                                totalItemsArray[3] = option[1].ToString();
+                                totalItemsArray[5] = option[1].ToString();
                                 return totalItemsArray;
                             }
                         }
@@ -155,15 +158,13 @@ namespace postSystem
                 }
                 else 
                 {
-                    totalItemsArray[2] = "Too big to ship!";
-                    totalItemsArray[3] = "NO PRICE";
+                    totalItemsArray[4] = "Too big to ship!";
+                    totalItemsArray[5] = "NO PRICE";
                     return totalItemsArray;
                 }
 
             }
-
-            //Expected output: ["Item Description", "Weight", "Package type, "Package price",  "Postage type", "Postage Price"] 
-            return totalItemsArray;
+            return [];
         }
     }
 }
