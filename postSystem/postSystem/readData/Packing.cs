@@ -58,9 +58,9 @@ namespace postSystem.readData
                         return package;
                     }
                 }
-                return [length, width, 0];
+                return [length, width, height, 0, 0];
             }
-            return [0, 0, 0];
+            return [0, 0, 0, 0, 0];
         }
     }
 

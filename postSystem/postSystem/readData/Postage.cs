@@ -21,6 +21,10 @@ namespace postSystem.readData
         /// <returns>string[] totalItemsArray, returns empty array if no data.</returns>
 
         //Expected output: ["Item Description", "Weight", "Package type, "Package price",  "Postage type", "Postage Price"] 
+
+        //"description": "Folded fishing rod",
+        //"weight": 1500
+        //"dimensions": [1100,100,100],
         public static string[] Postagefinder(string itemDescription, float[] packingType, int[] packageDimensions, int itemWeight)
         {
             string[] totalItemsArray = new string[6];
@@ -36,14 +40,19 @@ namespace postSystem.readData
             {
                 totalItemsArray[3] = packingType[4].ToString(); //Sets price of packing type.
 
+                if (packingType[4] == 0)
+                {
+                    totalItemsArray[2] = "No Package available!";
+                }
+
                 float height = packingType[2]; //Height of of box only
                 float packageWeight = packingType[3]; //Weight of box only 
                 float weight = itemWeight + packageWeight; //Add box and item total weight.
 
                 //Norgespakke liten (Inntil 5 kg)
-                if (length <= 350 && width <= 250 && height <= 120 && weight >= 350 || weight <= 5000) //Post specifications
+                if (length <= 350 && width <= 250 && height <= 120 && weight >= 350 && weight <= 5000) //Post specifications
                 {
-                    string postageTypeName = "Norgespakke small (up to 5 kg)";
+                    string postageTypeName = "Norges pakke small (up to 5 kg)";
                     totalItemsArray[4] = postageTypeName;
 
                     int price = 73;
@@ -53,9 +62,9 @@ namespace postSystem.readData
 
                 }
                 //Norgespakke stor (over 2kg)
-                else if (length > 350 && width > 250 && height > 120 && weight > 2000 && length <= 1200 && width <= 600 && height <= 600)
+                else if (weight < 35000 && length <= 1200 && width <= 600 && height <= 600)
                 {
-                    string postageTypeName = "Norgespakke big (over 2kg)";
+                    string postageTypeName = "Norges pakke big (over 2kg)";
                     totalItemsArray[4] = postageTypeName;
 
                     int[] option1 = [10000, 177]; //Will be handed in at posten so doesnt need price for posten.no?
@@ -66,17 +75,7 @@ namespace postSystem.readData
 
                     foreach (int[] option in postageOptions) //Finds if package is within 35000g or not.
                     {
-                        if (weight <= 10000)
-                        {
-                            totalItemsArray[5] = option[1].ToString();
-                            return totalItemsArray;
-                        }
-                        else if (weight <= 25000)
-                        {
-                            totalItemsArray[5] = option[1].ToString();
-                            return totalItemsArray;
-                        }
-                        else if (weight <= 35000)
+                        if (weight <= option[0])
                         {
                             totalItemsArray[5] = option[1].ToString();
                             return totalItemsArray;
