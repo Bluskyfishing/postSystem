@@ -12,7 +12,7 @@ public class FileWriter
     /// </summary>
     /// <param name="itemList"></param>
     /// <param name="sum"></param>
-    public static void WriteFile(List<string[]> itemList, List<int> sum)
+    public static void WriteFile(List<string[]> itemList, List<float> sum)
     {
         bool saveFile = SaveStatus.Save();
 

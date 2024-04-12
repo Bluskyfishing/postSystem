@@ -10,7 +10,7 @@ if (result != null)
 
     foreach (Item item in result)
     {
-        int[] packing = Packing.PackingFinder(item.Dimensions);
+        float[] packing = Packing.PackingFinder(item.Dimensions);
         string[] postage = Postage.Postagefinder(item.Description, packing, item.Dimensions, item.Weight);
         allItems.Add(postage);
     }
@@ -22,7 +22,7 @@ if (result != null)
         Console.WriteLine(string.Join(" : ",postage));
     }
     
-    List<int> sum = SumCalculator.CalculateSum(allItems);
+    List<float> sum = SumCalculator.CalculateSum(allItems);
     
     Console.WriteLine($"\nQuantity of items: {sum[0]}\n" +
                       $"Total weight: {sum[1]} g\n" +
