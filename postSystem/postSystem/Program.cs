@@ -5,7 +5,7 @@ using System.Runtime.ConstrainedExecution;
 // Extract the contents from the .json file
 List<Item>? fileContents = JsonReader.ReadItems();
 
-// Finds packing and postage for items from the .json file, and adds them to allitems list.
+// Finds packing and postage for items from the .json file, and adds them to allItems list.
 if (fileContents != null)
 {
     List<string[]> allItems = new List<string[]>();
