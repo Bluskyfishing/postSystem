@@ -63,7 +63,7 @@ public class FileWriter
                                                 "is either lost or damaged during transport.\n" +
                                                 "\n" +
                                                 "If you have further questions, you may contact us at:\n" +
-                                                "service@ibturbo.com\n\n");
+                                                "service@ibturbo.com\n");
 
             // Creating the table that is going to hold the shiping data
             PdfPTable table = new PdfPTable(6);
