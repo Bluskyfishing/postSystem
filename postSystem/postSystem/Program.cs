@@ -10,23 +10,23 @@ if (result != null)
 
     foreach (Item item in result)
     {
-        //Console.WriteLine($"Description: {item.Description}, Dimensions: [{string.Join(", ", item.Dimensions)}], Weight: {item.Weight}");
         int[] packing = Packing.PackingFinder(item.Dimensions);
-        //Console.WriteLine(string.Join(",", packing));
         string[] postage = Postage.Postagefinder(item.Description, packing, item.Dimensions, item.Weight);
         allItems.Add(postage);
     }
-    foreach (string[] postage in allItems) { Console.WriteLine(string.Join(",",postage)); }  
-    //MTG card: expected: 110 x 160 item.Dimensions
-    //foreach (float x in Packing.PackingFinder([89, 64, 1])) { Console.WriteLine(x); }
+    Console.WriteLine("Shipping list:\n" +
+                      "Item Description : Weight : Package type : Package price :  Postage type : Postage Price\n");
+
+    foreach (string[] postage in allItems)
+    {
+        Console.WriteLine(string.Join(" : ",postage));
+    }
     
     List<int> sum = SumCalculator.CalculateSum(allItems);
     
-    Console.WriteLine($"Shipping list:\n" +
-                      $"" +
-                      $"\nQuantity of items: {sum[0]}\n" +
+    Console.WriteLine($"\nQuantity of items: {sum[0]}\n" +
                       $"Total weight: {sum[1]} g\n" +
-                      $"Total price: {sum[2]},-");
+                      $"Total price: {sum[2]},-\n");
     
     FileWriter.WriteFile(allItems, sum);
 }
