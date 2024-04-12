@@ -11,6 +11,15 @@ namespace postSystem.readData
 {
     public static class Postage
     {
+        /// <summary>
+        /// Takes in packingtype for a item and finds correct postage for said item. 
+        /// </summary>
+        /// <param name="itemDescription"></param>
+        /// <param name="packingType"></param>
+        /// <param name="packageDimensions"></param>
+        /// <param name="itemWeight"></param>
+        /// <returns>string[] totalItemsArray, returns empty array if no data.</returns>
+
         //Expected output: ["Item Description", "Weight", "Package type, "Package price",  "Postage type", "Postage Price"] 
         public static string[] Postagefinder(string itemDescription, float[] packingType, int[] packageDimensions, int itemWeight)
         {

@@ -9,6 +9,11 @@ namespace postSystem.readData
 {
     public static class Packing
     {
+        /// <summary>
+        /// Finds the correct packingtype for item.
+        /// </summary>
+        /// <param name="dimensions"></param>
+        /// <returns>float[]package, if no package found return dimensions of package and 0 price.</returns>
         public static float[] PackingFinder(int[] dimensions)
         {
             int length = dimensions[0];
