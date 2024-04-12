@@ -12,7 +12,7 @@ namespace postSystem.methods
     public static class Postage
     {
         //Expected output: ["Item Description", "Weight", "Package type, "Package price",  "Postage type", "Postage Price"] 
-        public static string[] Postagefinder(string itemDescription, int[] packingType, int[] packageDimensions, int itemWeight)
+        public static string[] Postagefinder(string itemDescription, float[] packingType, int[] packageDimensions, int itemWeight)
         {
             string[] totalItemsArray = new string[6];
             //adds itemName, weight, and dimensions to list.
@@ -20,16 +20,16 @@ namespace postSystem.methods
             totalItemsArray[1] = itemWeight.ToString();
             totalItemsArray[2] = $"{packingType[0]} x {packingType[1]}";
 
-            int length = packingType[0]; //Length of box/letter
-            int width = packingType[1]; //Width of of box/letter
+            float length = packingType[0]; //Length of box/letter
+            float width = packingType[1]; //Width of of box/letter
 
             if (packingType.Length > 3) //Packages Options
             {
                 totalItemsArray[3] = packingType[4].ToString(); //Sets price of packing type.
 
-                int height = packingType[2]; //Height of of box only
-                int packageWeight = packingType[3]; //Weight of box only 
-                int weight = itemWeight + packageWeight; //Add box and item total weight.
+                float height = packingType[2]; //Height of of box only
+                float packageWeight = packingType[3]; //Weight of box only 
+                float weight = itemWeight + packageWeight; //Add box and item total weight.
 
                 //Norgespakke liten (Inntil 5 kg)
                 if (length <= 350 && width <= 250 && height <= 12 && weight >= 350 || weight <= 5000) //Post specifications
