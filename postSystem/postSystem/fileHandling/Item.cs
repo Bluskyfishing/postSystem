@@ -1,7 +1,7 @@
 namespace postSystem.fileHandling;
 
 /// <summary>
-/// 
+/// Class file for items
 /// </summary>
 /// <param name="description"></param>
 /// <param name="dimensions"></param>
