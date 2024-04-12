@@ -3,7 +3,7 @@ namespace postSystem.methods;
 public class SumCalculator
 {
     /// <summary>
-    /// 
+    /// Adds the totals for price, weight and items from itemList
     /// </summary>
     /// <param name="itemList"></param>
     /// <returns>sum</returns>
@@ -13,6 +13,7 @@ public class SumCalculator
         float totalWeight = 0;
         float totalItems = 0;
 
+        // Parsing the data and adding them together
         foreach (string[] strings in itemList)
         {
             float packagePrice = float.Parse(strings[3]);
@@ -22,8 +23,9 @@ public class SumCalculator
             totalWeight += weight;
             totalItems += 1;
         }
-
+        // Returns the values in a way they can be separated
         List<float> sum =
+
         [
             totalItems,
             totalWeight,
