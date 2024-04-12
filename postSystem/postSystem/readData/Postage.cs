@@ -15,7 +15,7 @@ namespace postSystem.methods
         public static string[] Postagefinder(string itemDescription, int[] packingType, int[] packageDimensions, int itemWeight)
         {
             string[] totalItemsArray = new string[6];
-
+            //adds itemName, weight, and dimensions to list.
             totalItemsArray[0] = itemDescription;
             totalItemsArray[1] = itemWeight.ToString();
             totalItemsArray[2] = $"{packingType[0]} x {packingType[1]}";
@@ -25,13 +25,14 @@ namespace postSystem.methods
 
             if (packingType.Length > 3) //Packages Options
             {
-                totalItemsArray[3] = packingType[4].ToString();
+                totalItemsArray[3] = packingType[4].ToString(); //Sets price of packing type.
+
                 int height = packingType[2]; //Height of of box only
                 int packageWeight = packingType[3]; //Weight of box only 
                 int weight = itemWeight + packageWeight; //Add box and item total weight.
 
                 //Norgespakke liten (Inntil 5 kg)
-                if (length <= 350 && width <= 250 && height <= 12 && weight >= 350 || weight <= 5000)
+                if (length <= 350 && width <= 250 && height <= 12 && weight >= 350 || weight <= 5000) //Post specifications
                 {
                     string postageTypeName = "Norgespakke small (up to 5 kg)";
                     totalItemsArray[4] = postageTypeName;
@@ -54,7 +55,7 @@ namespace postSystem.methods
 
                     List<int[]> postageOptions = new List<int[]> { option1, option2, option3 };
 
-                    foreach (int[] option in postageOptions)
+                    foreach (int[] option in postageOptions) //Finds if package is within 35000g or not.
                     {
                         if (weight <= 10000)
                         {
@@ -83,7 +84,7 @@ namespace postSystem.methods
             }
             else //Letters Options
             {
-                totalItemsArray[3] = packingType[2].ToString();
+                totalItemsArray[3] = packingType[2].ToString(); //PackingType for letters doesnt have hight. Adds price to list.
                 int height = packageDimensions[2];
 
                 //Letter under 350g
