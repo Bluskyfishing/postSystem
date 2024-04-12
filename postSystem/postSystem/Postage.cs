@@ -77,7 +77,7 @@ namespace postSystem
                 else
                 {
                     totalItemsArray[4] = "Too big to ship!";
-                    totalItemsArray[5] = "NO PRICE";
+                    totalItemsArray[5] = "0";
                     return totalItemsArray;
                 }
             }
@@ -159,7 +159,7 @@ namespace postSystem
                 else 
                 {
                     totalItemsArray[4] = "Too big to ship!";
-                    totalItemsArray[5] = "NO PRICE";
+                    totalItemsArray[5] = "0";
                     return totalItemsArray;
                 }
 
