@@ -41,7 +41,7 @@ namespace postSystem.readData
                 float weight = itemWeight + packageWeight; //Add box and item total weight.
 
                 //Norgespakke liten (Inntil 5 kg)
-                if (length <= 350 && width <= 250 && height <= 12 && weight >= 350 || weight <= 5000) //Post specifications
+                if (length <= 350 && width <= 250 && height <= 120 && weight >= 350 || weight <= 5000) //Post specifications
                 {
                     string postageTypeName = "Norgespakke small (up to 5 kg)";
                     totalItemsArray[4] = postageTypeName;
@@ -53,7 +53,7 @@ namespace postSystem.readData
 
                 }
                 //Norgespakke stor (over 2kg)
-                else if (length > 350 && width > 250 && height > 12 && weight > 2000 && length <= 1200 && width > 600 && height > 600)
+                else if (length > 350 && width > 250 && height > 120 && weight > 2000 && length <= 1200 && width <= 600 && height <= 600)
                 {
                     string postageTypeName = "Norgespakke big (over 2kg)";
                     totalItemsArray[4] = postageTypeName;
