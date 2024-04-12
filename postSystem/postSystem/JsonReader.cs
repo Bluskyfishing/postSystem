@@ -4,6 +4,10 @@ namespace postSystem;
 
 public class JsonReader
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>items</returns>
     public static List<Item>? ReadItems()
     {
         string jsonFile = "items.json";

@@ -18,4 +18,14 @@ if (result != null)
     foreach (string[] postage in allItems) { Console.WriteLine(string.Join(",",postage)); }  
     //MTG card: expected: 110 x 160 item.Dimensions
     //foreach (float x in Packing.PackingFinder([89, 64, 1])) { Console.WriteLine(x); }
+    
+    List<int> sum = SumCalculator.CalculateSum(allItems);
+    
+    Console.WriteLine($"Shipping list:\n" +
+                      $"" +
+                      $"\nQuantity of items: {sum[0]}\n" +
+                      $"Total weight: {sum[1]} g\n" +
+                      $"Total price: {sum[2]},-");
+    
+    FileWriter.WriteFile(allItems, sum);
 }
