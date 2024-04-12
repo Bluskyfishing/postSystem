@@ -4,7 +4,6 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.draw;
 
 namespace postSystem.fileHandling;
-
 public class FileWriter
 {
     /// <summary>

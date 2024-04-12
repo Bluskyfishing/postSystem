@@ -1,5 +1,4 @@
-namespace postSystem.methods;
-
+namespace postSystem.readData;
 public class SumCalculator
 {
     /// <summary>

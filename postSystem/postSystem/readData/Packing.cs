@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace postSystem.methods
+namespace postSystem.readData
 {
     public static class Packing
     {

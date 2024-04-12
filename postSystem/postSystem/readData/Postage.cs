@@ -7,7 +7,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace postSystem.methods
+namespace postSystem.readData
 {
     public static class Postage
     {

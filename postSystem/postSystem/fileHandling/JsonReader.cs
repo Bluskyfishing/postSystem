@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
 namespace postSystem.fileHandling;
-
 public class JsonReader
 {
     /// <summary>
