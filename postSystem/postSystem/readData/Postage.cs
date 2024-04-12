@@ -34,7 +34,7 @@ namespace postSystem.readData
             totalItemsArray[2] = $"{packingType[0]} x {packingType[1]}";
 
             float length = packingType[0]; //Length of box/letter
-            float width = packingType[1]; //Width of of box/letter
+            float width = packingType[1]; //Width of box/letter
 
             if (packingType.Length > 3) //Packages Options
             {
@@ -45,7 +45,7 @@ namespace postSystem.readData
                     totalItemsArray[2] = "No Package available!";
                 }
 
-                float height = packingType[2]; //Height of of box only
+                float height = packingType[2]; //Height of box only
                 float packageWeight = packingType[3]; //Weight of box only 
                 float weight = itemWeight + packageWeight; //Add box and item total weight.
 
