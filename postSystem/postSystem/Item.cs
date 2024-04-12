@@ -1,5 +1,11 @@
 namespace postSystem;
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="description"></param>
+/// <param name="dimensions"></param>
+/// <param name="weight"></param>
 public class Item(string description, int[] dimensions, int weight)
 {
     public string Description = description;
