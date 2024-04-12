@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace postSystem
+namespace postSystem.methods
 {
     public static class Packing
     {
-        public static int[] PackingFinder(int[] dimensions) 
+        public static int[] PackingFinder(int[] dimensions)
         {
             int length = dimensions[0];
             int width = dimensions[1];
@@ -36,7 +36,7 @@ namespace postSystem
                 return [length, width, height];
             }
 
-            else if (height > 20) 
+            else if (height > 20)
             {
                 //array = [length, width, height, weight, price]
                 int[] mini = [240, 159, 60, 67, 18];
@@ -55,8 +55,8 @@ namespace postSystem
                 }
                 return [length, width, height];
             }
-            return [0,0,0];
+            return [0, 0, 0];
         }
     }
-    
+
 }

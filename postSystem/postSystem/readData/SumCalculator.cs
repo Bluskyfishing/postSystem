@@ -1,4 +1,4 @@
-namespace postSystem;
+namespace postSystem.methods;
 
 public class SumCalculator
 {

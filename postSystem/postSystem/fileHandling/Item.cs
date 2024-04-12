@@ -1,4 +1,4 @@
-namespace postSystem;
+namespace postSystem.fileHandling;
 
 /// <summary>
 /// 

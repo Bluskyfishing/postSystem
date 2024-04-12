@@ -1,6 +1,6 @@
 
 using Newtonsoft.Json;
-namespace postSystem;
+namespace postSystem.fileHandling;
 
 public class JsonReader
 {
@@ -13,12 +13,12 @@ public class JsonReader
         string jsonFile = "items.json";
 
         using StreamReader read = new StreamReader(jsonFile);
-        
+
         string fileContent = read.ReadToEnd();
         string[] lines = fileContent.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
         lines[1] = "";
         string remainingContent = string.Join("\n", lines);
-        
+
         var items = JsonConvert.DeserializeObject<Dictionary<string, List<Item>>>(remainingContent);
 
         if (items != null && items.ContainsKey("packages")) return items?["packages"];

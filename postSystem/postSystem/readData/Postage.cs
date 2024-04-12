@@ -7,7 +7,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace postSystem
+namespace postSystem.methods
 {
     public static class Postage
     {
@@ -86,7 +86,7 @@ namespace postSystem
                 int height = packageDimensions[2];
 
                 //Letter under 350g
-                if (length <= 350 && width <= 250 && height <= 70 && itemWeight < 350) 
+                if (length <= 350 && width <= 250 && height <= 70 && itemWeight < 350)
                 {
                     string postageTypeName = "Letter under 350g";
                     totalItemsArray[4] = postageTypeName;
@@ -97,7 +97,7 @@ namespace postSystem
                     int[] option3 = [100, 36, 57];
                     int[] option4 = [350, 55, 57];
 
-                    List<int[]> postageOptions = new List<int[]> { option1, option2, option3, option4};
+                    List<int[]> postageOptions = new List<int[]> { option1, option2, option3, option4 };
 
                     foreach (int[] option in postageOptions)
                     {
@@ -156,7 +156,7 @@ namespace postSystem
                     }
 
                 }
-                else 
+                else
                 {
                     totalItemsArray[4] = "Too big to ship!";
                     totalItemsArray[5] = "0";
