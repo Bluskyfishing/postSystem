@@ -53,7 +53,7 @@ namespace postSystem.methods
                         return package;
                     }
                 }
-                return [length, width, height];
+                return [length, width, 0];
             }
             return [0, 0, 0];
         }

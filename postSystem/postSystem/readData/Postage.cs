@@ -19,13 +19,13 @@ namespace postSystem.methods
             totalItemsArray[0] = itemDescription;
             totalItemsArray[1] = itemWeight.ToString();
             totalItemsArray[2] = $"{packingType[0]} x {packingType[1]}";
-            totalItemsArray[3] = packingType[2].ToString();
 
             int length = packingType[0]; //Length of box/letter
             int width = packingType[1]; //Width of of box/letter
 
             if (packingType.Length > 3) //Packages Options
             {
+                totalItemsArray[3] = packingType[4].ToString();
                 int height = packingType[2]; //Height of of box only
                 int packageWeight = packingType[3]; //Weight of box only 
                 int weight = itemWeight + packageWeight; //Add box and item total weight.
@@ -83,6 +83,7 @@ namespace postSystem.methods
             }
             else //Letters Options
             {
+                totalItemsArray[3] = packingType[2].ToString();
                 int height = packageDimensions[2];
 
                 //Letter under 350g
